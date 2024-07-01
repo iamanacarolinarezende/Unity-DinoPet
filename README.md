@@ -11,6 +11,12 @@ Contribute: Feel free to contribute by opening issues or submitting pull request
 Contributing
 We welcome contributions from the community! Whether it's bug fixes, new features, or improvements, your help is appreciated. Please follow our contributing guidelines to get started.
 
+How I Made This Game: I used various assets, mods, and tutorials to create "Feed the Pet". Here are some of the resources utilized:
+
+Assets: Made by Inkscape and DragonBones
+Language: C-Sharp
+Programs: Inkscape, DragonBonesPro, unity and Visual Studio
+
 Contact
 For any inquiries or feedback, please reach out to message direct box.
 
