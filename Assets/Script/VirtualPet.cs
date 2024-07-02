@@ -26,6 +26,7 @@ public class VirtualPet : MonoBehaviour
         animator = GetComponent<Animator>();
         CreatePet();
         InvokeRepeating("StatusUpdate", 1f, 1f);
+        InvokeRepeating("Talk();", 3f, 3f);
        // AudioManager.instance.Play("music");
     }
 
@@ -41,6 +42,13 @@ public class VirtualPet : MonoBehaviour
         string[] virtualPetNames = { "Bolinha", "Pipoca", "Mingau", "Peludo", "Tico", "Biscoito", "Amendoim", "Nino", "Faísca", "Perry" };
         name = virtualPetNames[Random.Range(0, 10)];
         txtMsg.text = $"Olá o meu nome é {name}. Vamos Brincar um pouco?";
+        StartCoroutine(HideMessageAfterDelay(5.0f));
+    }
+
+    private IEnumerator HideMessageAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        txtMsg.text = ""; // Clean text
     }
 
     public void ToEat()
@@ -118,8 +126,46 @@ public class VirtualPet : MonoBehaviour
         if ((happy < 70) && (happy <= clean) && (happy <= food)) status = 2;
         if ((clean < 70) && (clean <= happy) && (clean <= food)) status = 3;
         if ((food < 70) && (food <= happy) && (food <= clean)) status = 4;
-        animator.SetInteger("status", status);
 
+        float value = 0.0f;
+        if (happy <= 10) value += 5f;
+        if (clean <= 10) value += 5f;
+        if (food <= 10) value += 5f;
+        health -= value;
+        if (health <= 0) GameOver();
+
+        animator.SetInteger("status", status);
         Debug.Log($"Saúde: {health} - Feliz: {happy} - Limpo: {clean} - Fome: {food}");
+    }
+
+    public void GameOver()
+    {
+        //Death animation
+
+        Debug.Log("Game Over!!");
+    }
+
+    public void Talk()
+    {
+        if (health <= 0) return;
+        switch (status)
+        {
+            case 1:
+                txtMsg.text = $"Nossa!!! Como eu estou feliz!";
+                break;
+
+            case 2:
+                txtMsg.text = $"Que tal brincarmos um pouco?";
+                break;
+
+            case 3:
+                txtMsg.text = $"Queria muito tomar um banho... ";
+                break;
+
+            case 4:
+                txtMsg.text = $"Que fome.... Comeria um super lanche agora.";
+                break;
+
+        }
     }
 }
