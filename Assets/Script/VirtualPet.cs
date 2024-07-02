@@ -5,7 +5,7 @@ using TMPro;
 
 public class VirtualPet : MonoBehaviour
 {
-    string name = "Pet"; //Pets name
+    //string name = "Pet"; //Pets name
     float health = 100; //When gets 0 the pet die
     int status = 1; //Controls the animation
     //Boring = 2;
@@ -26,7 +26,7 @@ public class VirtualPet : MonoBehaviour
         animator = GetComponent<Animator>();
         CreatePet();
         InvokeRepeating("StatusUpdate", 1f, 1f);
-        //InvokeRepeating("Talk;", 3f, 3f);
+        InvokeRepeating("Talk", 3f, 3f);
        // AudioManager.instance.Play("music");
     }
 
@@ -39,9 +39,9 @@ public class VirtualPet : MonoBehaviour
         food = 100;
 
         //Pets name
-        string[] virtualPetNames = { "Bolinha", "Pipoca", "Mingau", "Peludo", "Tico", "Biscoito", "Amendoim", "Nino", "Faísca", "Perry" };
+        string[] virtualPetNames = { "BOLINHA", "PIPOCA", "MINGAU", "PELUDO", "TICO", "BISCOITO", "AMENDOIM", "NINO", "FAÍSCA", "PERRY" };
         name = virtualPetNames[Random.Range(0, 10)];
-        txtMsg.text = $"Olá o meu nome é {name}. Vamos Brincar um pouco?";
+        txtMsg.text = $"Olá o meu nome é {name}. Vamos BRINCAR um pouco?";
     }
 
 
@@ -120,7 +120,7 @@ public class VirtualPet : MonoBehaviour
         if ((happy < 70) && (happy <= clean) && (happy <= food)) status = 2;
         if ((clean < 70) && (clean <= happy) && (clean <= food)) status = 3;
         if ((food < 70) && (food <= happy) && (food <= clean)) status = 4;
-        Talk();
+        
 
         float value = 0.0f;
         if (happy <= 10) value += 5f;
@@ -137,6 +137,7 @@ public class VirtualPet : MonoBehaviour
     {
         //Death animation
         animator.SetTrigger("death");
+        txtMsg.text = $"FIM DO JOGO!";
         //Debug.Log("Game Over!!");
     }
 
@@ -146,19 +147,19 @@ public class VirtualPet : MonoBehaviour
         switch (status)
         {
             case 1:
-                txtMsg.text = $"Nossa!!! Como eu estou feliz!";
+                txtMsg.text = $"Nossa!!! Como eu estou FELIZ!";
                 break;
 
             case 2:
-                txtMsg.text = $"Que tal brincarmos um pouco?";
+                txtMsg.text = $"Que tal BRINCAR um pouco?";
                 break;
 
             case 3:
-                txtMsg.text = $"Queria muito tomar um banho... ";
+                txtMsg.text = $"Queria muito TOMAR um BANHO... ";
                 break;
 
             case 4:
-                txtMsg.text = $"Que fome.... Comeria um super lanche agora.";
+                txtMsg.text = $"Que FOME.... Quero COMER um super lanche agora.";
                 break;
 
         }
