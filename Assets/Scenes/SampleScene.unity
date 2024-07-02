@@ -203,7 +203,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 148568878}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 962113713}
+        m_TargetAssemblyTypeName: VirtualPet, Assembly-CSharp
+        m_MethodName: ToEat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &148568878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,7 +335,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 493999852}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 962113713}
+        m_TargetAssemblyTypeName: VirtualPet, Assembly-CSharp
+        m_MethodName: ToPlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &493999852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,7 +604,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 567397782}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 962113713}
+        m_TargetAssemblyTypeName: VirtualPet, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &567397782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,6 +990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302dffd7bf97a08418b016078723c1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  txtMsg: {fileID: 667423480}
 --- !u!1 &1015887672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,7 +1678,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2128891372}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 962113713}
+        m_TargetAssemblyTypeName: VirtualPet, Assembly-CSharp
+        m_MethodName: ToBath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2128891372
 MonoBehaviour:
   m_ObjectHideFlags: 0
