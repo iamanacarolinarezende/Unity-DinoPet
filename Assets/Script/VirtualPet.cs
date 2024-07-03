@@ -17,12 +17,14 @@ public class VirtualPet : MonoBehaviour
     float happy = 100;
     float food = 100;
 
+    SpriteRenderer SpriteRenderer;
     Animator animator;
     public TextMeshProUGUI txtMsg;
 
     // Start is called before the first frame update
     void Start()
     {
+        SpriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         CreatePet();
         InvokeRepeating("StatusUpdate", 1f, 1f);
@@ -37,6 +39,11 @@ public class VirtualPet : MonoBehaviour
         clean = 100;
         happy = 100;
         food = 100;
+
+        //Change Pet Color
+        Color petColor = new Color(Random.Range(0.3f, 1f), Random.Range(0.3f, 1f), Random.Range(0.3f, 1f));
+        SpriteRenderer.color = petColor;
+        Debug.Log(petColor);
 
         //Pets name
         string[] virtualPetNames = { "BOLINHA", "PIPOCA", "MINGAU", "PELUDO", "TICO", "BISCOITO", "AMENDOIM", "NINO", "FAÍSCA", "PERRY" };
