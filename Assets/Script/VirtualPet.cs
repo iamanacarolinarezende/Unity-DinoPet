@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class VirtualPet : MonoBehaviour
 {
@@ -144,8 +145,14 @@ public class VirtualPet : MonoBehaviour
     {
         //Death animation
         animator.SetTrigger("death");
-        txtMsg.text = $"FIM DO JOGO!";
+        txtMsg.text = $"FIM DO JOGO! NÃO SE PREOCUPE, ESTAMOS PROCURANDO UM OUTRO AMIGO VIRTUAL PRA VOCÊ...";
+        Invoke("RestartGame", 10f);
         //Debug.Log("Game Over!!");
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void Talk()
